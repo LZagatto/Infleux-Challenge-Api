@@ -57,7 +57,6 @@ module.exports = class CampaignController {
 
     const updateData = {}
 
-    //verificar se a campanha existe
     const campaign = await Campaign.findOne({ _id: id })
 
     if (!campaign) {
@@ -66,7 +65,6 @@ module.exports = class CampaignController {
             .json({ error: "Campanha não encontrada" });
     }
 
-    //validando os campos que serão editados
     if (!nameCampaign) {
         res.status(422).json({ msg: 'Nome da campanha obrigatório!' })
         return
