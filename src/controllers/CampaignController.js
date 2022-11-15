@@ -40,4 +40,14 @@ module.exports = class CampaignController {
         }
     }
 
+    static async getCampaigns(req, res) {
+      try {
+          const campaigns = await Campaign.find();
+          return res.status(200).json({ campaigns });
+
+      } catch (err) {
+          res.status(500).json({ error: err.msg });
+      }
+  }
+
   }
