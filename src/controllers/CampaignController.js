@@ -7,19 +7,19 @@ module.exports = class CampaignController {
         const { nameCampaign, country, conversion, bid } = req.body
 
         if (!nameCampaign) {
-            res.status(422).json({ msg: 'Campo nameCampaign obrigatório!' })
+            res.status(422).json({ msg: 'Nome da campanha obrigatório!' })
             return
         }
         if (!country) {
-            res.status(422).json({ msg: 'Campo country obrigatório!' })
+            res.status(422).json({ msg: 'Nome do País obrigatório!' })
             return
         }
         if (!conversion) {
-            res.status(422).json({ msg: 'Campo conversion obrigatório!' })
+            res.status(422).json({ msg: 'Valor da conversão obrigatório!' })
             return
         }
         if (!bid) {
-            res.status(422).json({ msg: 'Campo bid obrigatório!' })
+            res.status(422).json({ msg: 'Lance obrigatório!' })
             return
         }
 
