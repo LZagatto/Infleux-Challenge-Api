@@ -50,4 +50,51 @@ module.exports = class CampaignController {
       }
   }
 
+  static async editCampaign(req, res) {
+
+    const id = req.params.id
+    const { nameCampaign, country, conversion, bid } = req.body
+
+    const updateData = {}
+
+    //verificar se a campanha existe
+    const campaign = await Campaign.findOne({ _id: id })
+
+    if (!campaign) {
+        return res
+            .status(422)
+            .json({ error: "Campanha não encontrada" });
+    }
+
+    //validando os campos que serão editados
+    if (!nameCampaign) {
+        res.status(422).json({ msg: 'Nome da campanha obrigatório!' })
+        return
+    } else {
+        updateData.nameCampaign = nameCampaign
+    }
+    if (!country) {
+        res.status(422).json({ msg: 'Nome do País obrigatório!' })
+        return
+    } else {
+        updateData.country = country
+    }
+    if (!conversion) {
+        res.status(422).json({ msg: 'Valor da conversão obrigatório!' })
+        return
+    } else {
+        updateData.conversion = conversion
+    }
+    if (!bid) {
+        res.status(422).json({ msg: 'Lance obrigatório!' })
+        return
+    } else {
+        updateData.bid = bid
+    }
+
+    await Campaign.findOneAndUpdate(id, updateData)
+    res.status(200).json({ msg: 'campanha atualizada' });
+
+}
+
   }
