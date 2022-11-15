@@ -97,4 +97,22 @@ module.exports = class CampaignController {
 
 }
 
+static async removeCampaign(req, res) {
+
+  const id = req.params.id
+
+  const campaign = await Campaign.findOne({ _id: id })
+
+  if (!campaign) {
+      return res
+          .status(404)
+          .json({ error: "Campanha não encontrada" });
+  }
+
+  await Campaign.findByIdAndRemove(id)
+
+  res.status(200).json({ msg: "removido com sucesso" })
+
+}
+
   }
