@@ -58,7 +58,6 @@ module.exports = class CampaignController {
     const updateData = {}
 
     const campaign = await Campaign.findOne({ _id: id })
-
     if (!campaign) {
         return res
             .status(422)
@@ -89,8 +88,9 @@ module.exports = class CampaignController {
     } else {
         updateData.bid = bid
     }
-
-    await Campaign.findOneAndUpdate(id, updateData)
+    await Campaign.findByIdAndUpdate(id, updateData, {
+        new: true
+      });
     res.status(200).json({ msg: 'campanha atualizada' });
 
 }
