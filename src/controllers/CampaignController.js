@@ -113,4 +113,22 @@ static async removeCampaign(req, res) {
 
 }
 
+static async getBetterCountry(req, res) {
+
+    try {
+
+        let bestCountry = req.params.country;
+       
+        const campaign = await Campaign.find({country: bestCountry}).sort({bid: -1}).limit(1);
+        return res.status(200).json({ campaign });
+  
+      } catch (err) {
+        res.status(500).json({ error: err.message });
+      }
+
+
+}
+
+
+
   }
