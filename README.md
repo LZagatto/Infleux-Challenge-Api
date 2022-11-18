@@ -2,7 +2,7 @@
 
 #Tech & Product Team
 
-<img src="readme.png" alt="Infleux Interview Process">
+<img src="./readme.PNG" alt="Infleux Interview Process">
 
 > The objective of this challenge is to model and implement a simple Ad Network, using ReactJs, Node.Js and MongoDB.
 
