@@ -33,8 +33,6 @@ module.exports = class CampaignController {
         try {
             await campaign.save()
             res.status(201).json({ msg: 'Campanha salva com sucesso!' })
-
-
         } catch (err) {
             res.status(500).json({ msg: err })
         }
@@ -44,7 +42,6 @@ module.exports = class CampaignController {
       try {
           const campaigns = await Campaign.find();
           return res.status(200).json({ campaigns });
-
       } catch (err) {
           res.status(500).json({ error: err.msg });
       }
@@ -92,7 +89,6 @@ module.exports = class CampaignController {
         new: true
       });
     res.status(200).json({ msg: 'campanha atualizada' });
-
 }
 
 static async removeCampaign(req, res) {
