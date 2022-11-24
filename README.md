@@ -2,7 +2,7 @@
 
 #Tech & Product Team
 
-<img src="readme.png" alt="Infleux Interview Process">
+<img src="./readme.PNG" alt="Infleux Interview Process">
 
 > The objective of this challenge is to model and implement a simple Ad Network, using ReactJs, Node.Js and MongoDB.
 
@@ -11,10 +11,11 @@
 The project is still in development and the next updates will be handled in the next tasks:
 
 - [ ] Tarefa 1 - Create unit tests;
-- [ ] Tarefa 2 - Apply Mask to inputs;
-- [ ] Tarefa 3 - Finalize responsiveness;
-- [ ] Tarefa 4 - Create new filters to search for campaigns;
-- [ ] Tarefa 5 - Render the error messages coming from the database;
+- [ ] Tarefa 2 - Hosting API on heroku;
+- [ ] Tarefa 3 - Apply Mask to inputs;
+- [ ] Tarefa 4 - Finalize responsiveness;
+- [ ] Tarefa 5 - Create new filters to search for campaigns;
+- [ ] Tarefa 6 - Render the error messages coming from the database;
 
 
 ## 💻 Pre-requisites
